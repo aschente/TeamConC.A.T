@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>QUIZ MAIN index.html</title>
+	<!-- boostrap modal START-->
+	
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/prettify.css" rel="stylesheet" />
+	
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" />
+	<link href="css/bootstrap-modal.css" rel="stylesheet" />
+	<!-- boostrap modal END-->
+	<!-- Bootstrap Core CSS -->
+    
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript" src="js/jq.js"></script><!-- jquery script -->
+	<link rel="stylesheet" href="css/style-custom.css"><!-- custom style -->
+	<script type="text/javascript" src="js/quizArray.js"></script>
+	
+</head>
+<body>
+<div id="index_modal_container" class="index_modal_container modal hide fade" data-backdrop="static" tabindex="-1" data-keyboard="false"></div>	
+		<div id="splashScreen"></div>
+		<div id="splashImage"><img id="splashImgLogo"src="img/concat.png" alt="" class="img-thumbnail borderLess noBg "/></div>
+<div id="wrapper">
+	
+
+        <!-- Navigation -->
+       
+        <div id="page-wrapper noBg">
+
+            <div class="container-fluid ">
+
+                 <div class="row">
+					<div class="col-lg-12">
+						<center>
+							<img src="img/natural.png" alt="" class="img-thumbnail borderLess noBg col-lg-12 col-md-12 col-sm-12 col-xs-12 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-0" /></span>
+						</center>	
+					</div>
+				 </div>
+				  
+				 
+				 
+						<center>
+							<button id="btn-play" class="btn btn-primary btn-block col-lg-12 col-md-12 col-sm-12 col-xs-12 marginBottom"> <img src="img/play.png" alt="" class="img-thumbnail borderLess noBg col-lg-6 col-md-12 col-sm-8 col-xs-12 col-lg-offset-3  col-md-offset-4 col-sm-offset-2 col-xs-offset-0" /></button>
+						
+							<button id="btn-leaderboard" class="btn btn-primary btn-block col-lg-12 col-md-12 col-sm-12 col-xs-12 marginBottom"> <img src="img/leaderboard.png" alt="" class="img-thumbnail borderLess noBg col-lg-6 col-md-12 col-sm-8 col-xs-12 col-lg-offset-3  col-md-offset-4 col-sm-offset-2 col-xs-offset-0" /></button>
+						
+							<a href="#"><button class="btn btn-primary btn-block col-lg-12 col-md-12 col-sm-12 col-xs-12 marginBottom"> <img src="img/setting.png" alt="" class="img-thumbnail borderLess noBg col-lg-6 col-md-12 col-sm-8 col-xs-12 col-lg-offset-3  col-md-offset-4 col-sm-offset-2 col-xs-offset-0" /></button></a>
+						
+							<a href="#"><button class="btn btn-primary btn-block col-lg-12 col-md-12 col-sm-12 col-xs-12 marginBottom"> <img src="img/about.png" alt="" class="img-thumbnail borderLess noBg col-lg-6 col-md-12 col-sm-8 col-xs-12 col-lg-offset-3  col-md-offset-4 col-sm-offset-2 col-xs-offset-0" /></button></a>
+						</center>
+					
+				 </div>
+				 
+				 
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	
+	
+	
+	
+	
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+	
+	
+	<script type="text/javascript" src="js/jq-custom.js"></script><!--custom jq script for for functions and variables-->
+	<!-- boostrap modal JS  START-->
+	<script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/prettify.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-modalmanager.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+	<!-- boostrap modal JS  END-->
+	
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			splashScreenIntro();//splash screen function --index.html
+			checkIfLogin();//--index.html
+			storeQuizArrayToLocalStorage();//store quizArray to localStorage --index.html
+			
+		});
+		
+	</script>
+	<script id="ajax" type="text/javascript">
+		var $modal = $('#index_modal_container');	
+
+			$('#test').on('click', function(){
+		  // create the backdrop and wait for next modal to be triggered
+		  //$('body').modalmanager('loading');<!-- para sa loading-->
+
+		  setTimeout(function(){
+			 $modal.load('game_over_page.html', '', function(){
+			  $modal.modal();
+			});
+		  },10);<!-- time out kung gano katagal 1000 ung original-->
+		});
+	</script>
+	
+</body>
+</html>

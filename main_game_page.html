@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>quiz</title>
+	
+	<!-- boostrap modal START-->
+	
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/prettify.css" rel="stylesheet" />
+	
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" />
+	<link href="css/bootstrap-modal.css" rel="stylesheet" />
+	<!-- boostrap modal END-->
+	<!-- Bootstrap Core CSS -->
+   
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/jq.js"></script><!-- jquery script -->
+	<link rel="stylesheet" href="css/style-custom.css"><!-- custom style -->
+	<script type="text/javascript">
+	</script>
+	<style type="text/css">
+		.customModal{
+			position:fixed;
+			width:100%;
+			height:100%;
+			background:white;
+			z-index:99999;
+			
+		}
+		.customModalContainer{
+			
+			margin-top:20%;
+			background:#428BCA;
+			width:100%;
+			text-align:center;
+			height:60px;
+			
+		}
+		#correct{
+			position:fixed;
+			width:40%;
+			height:30%;
+			margin-top:20%;
+			left:30%;
+			text-align:center;
+			background:green;
+			display:none; 
+		}
+		@font-face{
+			font-family:ptext;
+			src:url("fonts/animeace2_bld.ttf");
+		
+		}
+		.rsgTime{
+			
+			font-family:ptext;
+			font-size:300%;
+			color:white;
+			height:50px;
+			
+		}
+		.quest{
+			font-family:ptext;
+			font-size:100%;
+			color:white;
+			text-align:center;
+		}
+		.btn-font{
+		
+			font-family:ptext;
+			font-size:100%;
+			color:white;
+			text-align:center;
+		}
+		
+		.scoreshow{
+			font-family:ptext;
+			font-size:100%;
+			color:white;
+			
+			
+		}
+		.scores{
+			font-family:ptext;
+			font-size:200%;
+			color:white;
+			border:0px;
+			background:none;
+			
+		}
+		
+		.timerFont{
+		
+			font-family:ptext;
+			font-size:200%;
+			color:white;
+			text-align:center;
+			
+		}
+		.imgContainer{
+			background-size:100% 100%;
+			background:url("img/alarms.png") no-repeat center center;
+			height:77px;
+			
+		
+		}
+		.imgText{
+			text-align:center;
+		}
+		#imgTimer{
+			background-size:100% 100%;
+			background:url("img/alarms.png") no-repeat;
+			height:77px;
+			text-align:center;
+			
+		
+		}
+	</style>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#testCorrect").click(function(){
+			$("#correct").fadeToggle();
+			setTimeout(function(){
+				$("#correct").fadeToggle();
+			},500);
+		});
+		
+		
+	});
+	
+	</script>
+</head>
+<body>
+	<audio src="music/correct.wav"  id="correctaudio"></audio>
+	<audio src="music/wrong.wav"  id="wrongaudio"></audio>
+	<div id="main_game_modal_container" class="modal hide fade" data-backdrop="static" tabindex="-1" data-keyboard="false"></div>
+	<!--<div id="correct">Correct</div>-->
+	<div class="customModal" id="rsgTimerModal">
+		<div class="customModalContainer">
+			
+			<div class="customModalContent ">	
+				<br/>
+				<p id="rsgTimer" class="rsgTime "></p>
+				<!--<input type="text" name="" id="rsgTimer" /><br /><!-- TIMER -->
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id="wrapper">
+	
+
+        <!-- Navigation -->
+       
+        <div id="page-wrapper noBg">
+
+            <div class="container-fluid ">
+			
+				
+						
+						
+							
+						<p class="scoreshow ">Score</p> 
+						
+						<input type="text" id="score" class="scores noBg noBorder">
+						
+								
+								
+							
+						
+					
+				
+				 <div class="row">
+					<div class="col-lg-12">
+						<div class="imgContainer">
+							
+									<br/>
+									<p id="gameTimer" class="timerFont"></p>
+					
+							
+						</div>
+						
+					</div>
+				</div>
+			
+				
+						
+						
+					
+							
+							<div class="panel panel-primary" style=" border:2px solid white; background:#428BCA; border-radius:4px; margin-bottom:2%;">
+							
+								<div class="panel-heading">
+									<h3 class="panel-title" style="text-align:center;">
+									
+										
+									</h3>
+									
+								</div>
+								<div class="panel-body" style="background:#428BCA; height:100px;">
+										<p id="question" class="quest"></p>
+								</div>
+							</div>
+					
+						<center>
+							<input type="button" value="" id="choice1" class="btn-choice btn btn-block btn-primary btn-font form-control col-lg-6 col-md-6 col-sm-6 col-xs-6"/>
+							<input type="button" value="" id="choice2" class="btn-choice btn btn-block btn-primary btn-font form-control col-lg-6 col-md-6 col-sm-6 col-xs-6"/>
+							<input type="button" value="" id="choice3" class="btn-choice btn btn-block btn-font btn-primary form-control col-lg-6 col-md-6 col-sm-6 col-xs-6"/>
+							<input type="button" value="" id="choice4" class="btn-choice btn btn-block btn-font btn-primary form-control col-lg-6 col-md-6 col-sm-6 col-xs-6"/>
+						</center>
+		
+					
+				 </div>
+				 
+				 
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	
+	
+	
+	
+	
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	<center>
+	
+	
+	<!-- TIMER -->
+	<input type="text" name="" id="correct" disabled/>
+	
+	
+	
+	</center>
+	
+	<script type="text/javascript" src="js/jq-custom.js"></script><!--custom jq script for for functions and variables-->
+	<!-- boostrap modal JS  START-->
+	<script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/prettify.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-modalmanager.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+	<!-- boostrap modal JS  END-->
+	<script type="text/javascript">
+		$(document).ready(function(){	
+		startRsg();//--main_game_page.html
+		});
+	</script>
+</body>
+</html>

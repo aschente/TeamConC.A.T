@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>QUIZ MAIN leaderboard_page.html</title>
+	<script type="text/javascript" src="js/jq.js"></script><!-- jquery script -->
+	
+	<link rel="stylesheet" href="css/style-custom.css"><!-- custom style -->
+	<style type="text/css">
+	@font-face{
+			font-family:ptext;
+			src:url("fonts/animeace2_bld.ttf");
+		
+		}
+	h2{
+		font-family:ptext;
+		color:#428BCA;
+		text-align:center;
+	
+	}
+	</style>
+</head>
+<body>
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		&nbsp;
+	</div>
+	<div class="modal-body">
+			<h2>High Scores</h2>
+		<div class="table-responsive">
+		<center>
+			<table id="leaderboardTable"  class="table table-hover table-striped">
+				<thead>
+	
+					<tr>
+						<th>Rank</th>
+						<th>Username</th>
+						<th>Score</th>
+					</tr>
+					
+				</thead>
+			</table>
+			
+			<!--<input class="btn-main-menu" type="button" value="MAIN MENU" />-->
+		</center>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<!--<button type="button" data-dismiss="modal" class="btn">Close</button>
+		<button type="button" class="btn btn-primary">Ok</button>-->
+	</div>
+	
+	<script type="text/javascript" src="js/jq-custom.js"></script><!--custom jq script for for functions and variables-->
+	<script type="text/javascript">
+	
+		getLeaderboard(); //call ajax leaderboard; --leaderboard_page.html
+	
+	</script>
+</body>
+</html>
